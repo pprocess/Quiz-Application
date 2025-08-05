@@ -1,0 +1,222 @@
+[
+  {
+    "question": "What is the keyword to define a function in Python?",
+    "options": [
+      "func",
+      "def",
+      "function",
+      "define"
+    ],
+    "answer": 1,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "Which operator is used for exponentiation in Python?",
+    "options": [
+      "^",
+      "**",
+      "//",
+      "%"
+    ],
+    "answer": 1,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "What is the output of: print(type([]))?",
+    "options": [
+      "<class 'list'>",
+      "<class 'dict'>",
+      "<class 'set'>",
+      "<class 'tuple'>"
+    ],
+    "answer": 0,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "Which of the following is not a valid Python data type?",
+    "options": [
+      "set",
+      "map",
+      "list",
+      "tuple"
+    ],
+    "answer": 1,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "What does the 'len()' function do?",
+    "options": [
+      "Returns the number of elements in a list",
+      "Converts a string to lowercase",
+      "Returns the last index of a list",
+      "Adds an element to a list"
+    ],
+    "answer": 0,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "Which symbol is used for comments in Python?",
+    "options": [
+      "//",
+      "/*",
+      "#",
+      "--"
+    ],
+    "answer": 2,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "What is the output of: bool('False')?",
+    "options": [
+      "False",
+      "True",
+      "None",
+      "Error"
+    ],
+    "answer": 1,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "Which of the following creates a dictionary?",
+    "options": [
+      "{}",
+      "[]",
+      "()",
+      "<>"
+    ],
+    "answer": 0,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "Which built-in function converts a string to an integer?",
+    "options": [
+      "int()",
+      "str()",
+      "float()",
+      "char()"
+    ],
+    "answer": 0,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "How do you start a for loop in Python?",
+    "options": [
+      "for(i = 0; i < 10; i++)",
+      "foreach i in range(10)",
+      "for i in range(10):",
+      "loop i from 1 to 10"
+    ],
+    "answer": 2,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "What will print('5' + '5') output?",
+    "options": [
+      "10",
+      "55",
+      "5 5",
+      "Error"
+    ],
+    "answer": 1,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "Which function is used to get input from the user?",
+    "options": [
+      "input()",
+      "read()",
+      "scan()",
+      "gets()"
+    ],
+    "answer": 0,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "Which of the following is a mutable data type?",
+    "options": [
+      "tuple",
+      "list",
+      "str",
+      "int"
+    ],
+    "answer": 1,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "How do you start a conditional statement in Python?",
+    "options": [
+      "if x > y:",
+      "if (x > y)",
+      "if x > y then",
+      "if x > y do"
+    ],
+    "answer": 0,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "Which method adds an item to the end of a list?",
+    "options": [
+      "append()",
+      "add()",
+      "push()",
+      "insert()"
+    ],
+    "answer": 0,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "What is the correct file extension for Python files?",
+    "options": [
+      ".py",
+      ".pt",
+      ".pyt",
+      ".pyc"
+    ],
+    "answer": 0,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "What is the output of: print(10 // 3)?",
+    "options": [
+      "3.33",
+      "3",
+      "3.0",
+      "Error"
+    ],
+    "answer": 1,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "Which of these is a valid variable name?",
+    "options": [
+      "1name",
+      "name_1",
+      "name-1",
+      "def"
+    ],
+    "answer": 1,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "What keyword is used to define a class?",
+    "options": [
+      "function",
+      "define",
+      "class",
+      "object"
+    ],
+    "answer": 2,
+    "topic": "Python Basics"
+  },
+  {
+    "question": "Which of the following is used to handle exceptions?",
+    "options": [
+      "if-else",
+      "try-except",
+      "do-while",
+      "for-else"
+    ],
+    "answer": 1,
+    "topic": "Python Basics"
+  }
+]
