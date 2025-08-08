@@ -1,14 +1,11 @@
-import tkinter as tk
 from tkinter import messagebox
 import random
 import json
-import uuid
 import gui as gui
 import db as db
 
-users = db.users
-results = db.results
-questions = []
+# Initialize the SQLite database tables.
+db.initialize_database()
 
 # quiz app
 class QuizApp:
@@ -45,12 +42,15 @@ class QuizApp:
         if not username:
             messagebox.showwarning("Error", "Username cannot be empty.")
             return
-        user = users.find_one({"username": username})
+
+        # Use the SQLite db module to check and insert users
+        user = db.get_user_by_username(username)
         if not user:
-            users.insert_one({"username": username})
+            db.insert_user(username)
             messagebox.showinfo("Welcome", "User registered and logged in.")
         else:
             messagebox.showinfo("Welcome", "User logged in.")
+
         self.username = username
         self.show_menu_frame()
 
@@ -59,20 +59,26 @@ class QuizApp:
 
     # get all random 5 questions from question database
     def start_quiz(self):
-        global questions
         try:
+            # Load questions from the JSON file into the SQLite database first
             with open('questions.json', 'r') as f:
-                questions = json.load(f)
+                questions_data = json.load(f)
+                db.load_questions_from_json(questions_data)
         except FileNotFoundError:
             messagebox.showerror("Error", "questions.json not found. Please create the file.")
             return
         except json.JSONDecodeError:
             messagebox.showerror("Error", "Error decoding questions.json. Please check file format.")
             return
-        if len(questions) < 5:
+
+        # Get the questions from the SQLite database
+        all_questions = db.get_all_questions()
+
+        if len(all_questions) < 5:
             messagebox.showerror("Error", "Not enough questions in the database (need at least 5).")
             return
-        self.selected_questions = random.sample(questions, 5)
+
+        self.selected_questions = random.sample(all_questions, 5)
         self.score = 0
         self.current_question_index = 0
         self.show_question()
@@ -80,7 +86,7 @@ class QuizApp:
     def show_question(self):
         gui.create_question_frame(self.root, self)
 
-# check answers
+    # check answers
     def check_answer(self):
         if self.answer_var.get() == -1:
             messagebox.showwarning("Warning", "Please select an answer before submitting.")
@@ -107,16 +113,13 @@ class QuizApp:
     # end the quiz
     def finish_quiz(self):
         percent = int((self.score / 5) * 100)
-
-        results.insert_one({
-            "username": self.username,
-            "score": self.score,
-            "percent": percent
-        })
+        # Use the SQLite db module to insert the result
+        db.insert_result(self.username, self.score, percent)
         gui.create_quiz_result_frame(self.root, self)
 
     # view your own score
     def view_scores(self):
-        user_results = list(results.find({"username": self.username}))
-        all_results = list(results.find())
+        # Use the SQLite db module to get results
+        user_results = db.get_user_results(self.username)
+        all_results = db.get_all_results()
         gui.create_scores_frame(self.root, self, user_results, all_results)
