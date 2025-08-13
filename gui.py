@@ -12,7 +12,7 @@ def create_start_page(root, app_instance):
     tk.Label(root, text="Quiz Game", font=("Arial", 32, "bold"), bg=root['bg']).pack(pady=50)
     tk.Button(root, text="Start", command=app_instance.start_app, width=25, height=3, font=("Arial", 14)).pack(pady=15)
     tk.Button(root, text="Exit", command=root.destroy, width=25, height=3, font=("Arial", 14)).pack(pady=15)
-    tk.Label(root, text="built by Process, Felipe, Ali", font=("Arial", 10), bg=root['bg']).pack(side="bottom", pady=20)
+    tk.Label(root, text="built by Process", font=("Arial", 10), bg=root['bg']).pack(side="bottom", pady=20)
 
 # login frame
 def create_login_frame(root, app_instance):
